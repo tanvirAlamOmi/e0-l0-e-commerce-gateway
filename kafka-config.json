@@ -1,0 +1,15 @@
+{
+    "kafkaTopic": "e_commerce_gateway_topic",
+    "broker": "localhost:9092",
+    "connectionTimeout": 3000,
+    "authenticationTimeout": 1000,
+    "reauthenticationThreshold": 10000,
+
+    
+    "userClientId": "user_gateway",
+    "userGroupId":"user_group",
+
+    
+    "authClientId": "auth_gateway",
+    "authGroupId":"auth_group"
+}
