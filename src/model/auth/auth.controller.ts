@@ -4,36 +4,36 @@ import { AuthProducerKafkaClientService } from 'src/producer';
 
 @Controller('auth')
 export class AuthController {
-  constructor( private readonly kafkaClientService: AuthProducerKafkaClientService ) {}
+  constructor( private readonly authClientService: AuthProducerKafkaClientService ) {}
 
   @Post('login')
   login(@Payload() payload) {
-    return this.kafkaClientService.send('login', payload);
+    return this.authClientService.send('login', payload);
   }
 
   @Post('signup')
   signup(@Payload() payload) {
-    return this.kafkaClientService.send('signup', payload);
+    return this.authClientService.send('signup', payload);
   }  
 
   @Post('logout')
   async logout(@Payload() payload) {
-      return this.kafkaClientService.send('logout', payload);
+      return this.authClientService.send('logout', payload);
   }
 
   @Post('refresh')
   async refreshTokens(@Payload() payload) {
-      return this.kafkaClientService.send('refresh', payload);
+      return this.authClientService.send('refresh', payload);
   }
 
   @Post('request-password-reset')
   async requestPasswordReset(@Payload() payload) {
-      return this.kafkaClientService.send('requestPasswordReset', payload);
+      return this.authClientService.send('requestPasswordReset', payload);
   }
 
   @Post('reset-password')
   async resetPassword(@Payload() payload) {
-      return this.kafkaClientService.send('resetPassword', payload);
+      return this.authClientService.send('resetPassword', payload);
   }
 
   @Get()

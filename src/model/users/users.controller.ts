@@ -6,23 +6,23 @@ import { UserProducerKafkaClientService } from 'src/producer';
 @Controller('users')
 export class UsersController {
   constructor(
-    private readonly kafkaClientService: UserProducerKafkaClientService
+    private readonly userClientService: UserProducerKafkaClientService
   ) {}
 
   @Get()
-  findAllUsers() {
-    return this.kafkaClientService.send('findAllUsers', 'Hello Kafka');
+  getUsers() {
+    return this.userClientService.send('getUsers', 'Hello Kafka');
   }
 
   @Get(':id')
-  findSingleUser(@Param('id') id: string) {
+  getUser(@Param('id') id: string) {
     console.log('producer id', id);
-    return this.kafkaClientService.send('findSingleUser', id);
+    return this.userClientService.send('getUser', id);
   }
 
   @Patch(':id')
   updateUser(@Param('id') id: string, @Payload() payload) {
-    return this.kafkaClientService.send('updateUser', {
+    return this.userClientService.send('updateUser', {
       id: id,
       data: payload
     });
@@ -31,6 +31,6 @@ export class UsersController {
   
   @Delete(':id')
   deleteUser(@Param('id') id: string) {
-    return this.kafkaClientService.send('deleteUser', id);
+    return this.userClientService.send('deleteUser', id);
   }
 }

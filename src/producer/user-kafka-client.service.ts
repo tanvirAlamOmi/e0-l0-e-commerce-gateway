@@ -20,5 +20,5 @@ export class UserProducerKafkaClientService extends BaseKafkaService {
   })
   client: ClientKafka;
 
-  topics = ['findAllUsers', 'findSingleUser', 'updateUser', 'deleteUser'];
+  topics = ['getUsers', 'getUser', 'updateUser', 'deleteUser'];
 }
