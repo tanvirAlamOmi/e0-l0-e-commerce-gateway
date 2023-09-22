@@ -11,5 +11,9 @@
 
     
     "authClientId": "auth_gateway",
-    "authGroupId":"auth_group"
+    "authGroupId":"auth_group",
+
+    
+    "productClientId": "product_gateway",
+    "productGroupId":"product_group"
 }
