@@ -7,13 +7,17 @@
 
     
     "userClientId": "user_gateway",
-    "userGroupId":"user_group",
+    "userGroupId": "user_group",
 
     
     "authClientId": "auth_gateway",
-    "authGroupId":"auth_group",
+    "authGroupId": "auth_group",
 
     
     "productClientId": "product_gateway",
-    "productGroupId":"product_group"
+    "productGroupId": "product_group",
+    
+    
+    "orderClientId": "order_gateway",
+    "orderGroupId": "order_group"
 }
